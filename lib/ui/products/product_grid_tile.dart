@@ -18,13 +18,19 @@ class ProductGridTile extends StatelessWidget {
         footer: buildGridFooterBar(context),
         child: GestureDetector(
           onTap: () {
-            // print('Go to product detail creen');
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (ctx) => ProductDetailScreen(product),
-              ),
+            Navigator.of(context).pushNamed(
+              ProductDetailScreen.routeName,
+              arguments: product.id,
             );
           },
+          // onTap: () {
+          //   // print('Go to product detail creen');
+          //   Navigator.of(context).push(
+          //     MaterialPageRoute(
+          //       builder: (ctx) => ProductDetailScreen(product),
+          //     ),
+          //   );
+          // },
           child: Image.network(
             product.imageUrl,
             fit: BoxFit.cover,

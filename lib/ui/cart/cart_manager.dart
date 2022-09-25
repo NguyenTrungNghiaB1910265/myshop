@@ -1,3 +1,4 @@
+import 'package:myshop/models/product.dart';
 import '../../models/cart_item.dart';
 
 class CartManager {
