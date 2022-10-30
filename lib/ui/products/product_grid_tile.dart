@@ -6,6 +6,7 @@ import '../../models/product.dart';
 import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 import '../../ui/cart/cart_manager.dart';
+import '../products/products_manager.dart';
 
 class ProductGridTile extends StatelessWidget {
   const ProductGridTile(
@@ -49,7 +50,8 @@ class ProductGridTile extends StatelessWidget {
             ),
             color: Theme.of(context).colorScheme.secondary,
             onPressed: () {
-              product.isFavorite = !isFavorite;
+              // product.isFavorite = !isFavorite;
+              ctx.read<ProductsManager>().toggleFavoriteStatus(product);
             },
           );
         },
